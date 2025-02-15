@@ -1,0 +1,53 @@
+<div class="w-100 md:p-8 p-5 vh-100">
+  <div class="d-flex justify-content-between align-items-center w-100 md:mb-6 mb-4">
+    <img src="https://simbiotiktech.com/wp-content/themes/simbiotik_tech/images/head_logo.png" alt="Company Logo"
+      style="height: 80px;">
+
+    <button mat-button color="accent" class="rounded" (click)="backToList()">
+      <mat-icon class="pr-3">arrow_back</mat-icon>Back to List
+    </button>
+  </div>
+
+  <mat-card class="rounded-0 shadow">
+
+    <mat-card-content>
+      <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" floatLabel="always">
+              <mat-label>Title</mat-label>
+              <input matInput placeholder="Title" formControlName="title">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-4">
+            <mat-form-field appearance="outline" floatLabel="always">
+              <mat-label>Description</mat-label>
+              <input matInput placeholder="Description" formControlName="description">
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-2">
+            <mat-label class="block mb-2 font-medium">Is Completed</mat-label>
+            <div class="d-flex">
+              <span class="pe-1">complete</span>
+              <mat-slide-toggle formControlName="isCompleted">
+                Incomplete
+              </mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center">
+          <button mat-raised-button color="primary" (click)="backToList()">
+            Cancel
+          </button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="todoForm.invalid">
+            Save
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

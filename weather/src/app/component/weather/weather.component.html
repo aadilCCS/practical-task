@@ -1,0 +1,57 @@
+<div class="container vh-100">
+    <div class="wrapper m-5">
+        <div class="input-group p-5">
+            <input type="text" [(ngModel)]="locationName" class="form-control rounded-0 shadow"
+                placeholder="Search Location">
+            <button class="btn search-btn" (click)="getWeather()">
+                <i class="bi bi-search"></i>
+            </button>
+        </div>
+
+        @if(loading){
+        <div class="position-relative">
+            <img src="https://media.istockphoto.com/id/1172745387/photo/blue-sky-with-clouds.jpg?s=612x612&w=0&k=20&c=678UKrrgsK3-qVl36Rct0WN7EDZybOfYiOf3o43RAlI="
+                alt="" class="img-fluid w-100">
+
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+        } @else {
+        <div class="cloud-img">
+            <img src="https://media.istockphoto.com/id/1172745387/photo/blue-sky-with-clouds.jpg?s=612x612&w=0&k=20&c=678UKrrgsK3-qVl36Rct0WN7EDZybOfYiOf3o43RAlI="
+                alt="" class="img-fluid">
+
+            <div class="sub-text">
+                <h2 id="temperature">{{ weatherData?.main?.temp | number:'1.0-0' }}°</h2>
+                <p id="city-name">{{ weatherData?.name }}</p>
+            </div>
+
+        </div>
+
+        @if(forecastData.length > 0) {
+        <div class="forecast-container mt-5">
+            <h3 class="mb-4">5-Day Forecast</h3>
+            <div class="">
+                @for(day of forecastData; track day.date) {
+                <div class="card p-3 rounded-0 shadow m-3">
+                    <div class="d-flex justify-content-between align-items-center m-0">
+                        <p class="date m-0"><strong>{{ day.date | date:'MMM d' }}</strong></p>
+                        <div class="d-flex justify-content-center align-items-center m-0">
+                            <img [src]="'https://openweathermap.org/img/w/' + day.weather.icon + '.png'"
+                                alt="Weather icon" class="m-0" style="height: 50px; width: 50px;">
+                            <p class="description m-0">{{ day.weather.description }}</p>
+                        </div>
+                        <p class="m-0">{{ day.temp_min | number:'1.0-0' }}° / {{ day.temp_max | number:'1.0-0' }}°</p>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        }
+
+        }
+
+
+    </div>
+</div>

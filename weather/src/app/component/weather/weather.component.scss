@@ -1,0 +1,37 @@
+.search-btn {
+    position: absolute;
+    right: 5%;
+    z-index: 99;
+}
+
+.cloud-img {
+    position: relative;
+
+    img {
+        height: 10em;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .sub-text {
+        position: absolute;
+        top: 35%;
+        left: 45%;
+        color: white;
+
+        h2 {
+            font-weight: 100;
+        }
+
+        p {
+            font-size: 1.5em;
+            font-weight: 100;
+        }
+    }
+}
+
+.spinner-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}

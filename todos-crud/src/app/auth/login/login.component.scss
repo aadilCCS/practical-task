@@ -1,0 +1,84 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-content {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+}
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+
+  .mat-form-field-outline {
+    background-color: white;
+    border-radius: 4px;
+  }
+
+  .mat-input-element {
+    background-color: white;
+  }
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}
+
+.img-side {
+  // background-image: url('../../../../public/rain-img-2.jpg');
+  background-image: url('https://simbiotiktech.com/wp-content/themes/simbiotik_tech/images/footer_bac.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: inherit;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 80px;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1rem;
+  }
+
+  .login-content {
+    max-width: 100%;
+    box-shadow: none;
+    padding: 1rem;
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 80px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+}
+
+.mat-mdc-form-field-error-wrapper{
+  padding: 0 !important;
+}
